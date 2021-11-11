@@ -16,7 +16,6 @@ jobs:
       - run: git config --global user.email 'hendecasyllabic@googlemail.com'
       - run: yarn config set version-tag-prefix ""
       - run: yarn config set version-commit-hooks false
-      - run: yarn version --patch
-      - run: npm version patch -m "[RELEASE] %s"
+      - run: yarn version --patch --message "[RELEASE] %s"
       - run: git push --tags
       - run: yarn config set version-commit-hooks true
