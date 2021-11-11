@@ -12,5 +12,7 @@ jobs:
     if: "!startsWith(github.event.head_commit.message, '[RELEASE]')"
     steps:
       - uses: actions/checkout@v2
+      - run: git config --global user.name 'Chris'
+      - run: git config --global user.email 'hendecasyllabic@googlemail.com'
       - run: npm version patch -m "[RELEASE] %s"
       - run: git push
